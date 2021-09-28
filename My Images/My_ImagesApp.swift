@@ -9,10 +9,11 @@ import SwiftUI
 
 @main
 struct My_ImagesApp: App {
+    @StateObject var vm = ViewModel()
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(ViewModel())
+                .environmentObject(vm)
                 .onAppear {
                     UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
                 }
